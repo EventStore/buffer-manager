@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05598608-CF42-49C1-A220-B1B7D1EBD83E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BufferManager.Tests</RootNamespace>
+    <AssemblyName>BufferManager.Tests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="when_creating_a_buffer_manager.cs" />
+    <Compile Include="has_buffer_pool_fixture.cs" />
+    <Compile Include="has_buffer_manager_fixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_a_buffer_pool_has_been_disposed.cs" />
+    <Compile Include="when_changing_data_in_a_bufferpool_via_indexer.cs" />
+    <Compile Include="when_checking_in_a_buffer.cs" />
+    <Compile Include="when_checking_out_a_buffer.cs" />
+    <Compile Include="when_converting_to_an_effective_IEnumerable_of_arraysegments.cs" />
+    <Compile Include="when_converting_to_a_byte_array.cs" />
+    <Compile Include="when_disposing_a_buffer_pool.cs" />
+    <Compile Include="when_insantiating_a_buffer_pool_stream.cs" />
+    <Compile Include="when_instantiating_a_bufferpool.cs" />
+    <Compile Include="when_reading_data_in_a_bufferpool_via_indexer.cs" />
+    <Compile Include="when_reading_from_the_stream.cs" />
+    <Compile Include="when_reading_multiple_bytes.cs" />
+    <Compile Include="when_seeking_in_the_stream.cs" />
+    <Compile Include="when_setting_the_length_of_the_pool.cs" />
+    <Compile Include="when_writing_multiple_bytes.cs" />
+    <Compile Include="when_writing_to_the_stream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BufferManager\BufferManager.csproj">
+      <Project>{a794d3fb-06ac-471f-ab8d-6e98cbfa0021}</Project>
+      <Name>BufferManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
